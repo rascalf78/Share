@@ -2,6 +2,7 @@
 #include <time.h>
 #include <string>
 
+#include "TestHeader.hpp"
 
 using namespace std;
 
@@ -37,23 +38,8 @@ int main(){
 
     checkifodd(randomnum);
 
-
-
-    string waitin = " ";
-    cout << "type esc to end, anything else to restart program" << endl;
-    cin >> waitin;
-
-    if (waitin == "esc")
-    {
-        system("cls");
-        return 0;
-    }
-    else
-    {
-        system("cls");
-        main();
-    }
+    waitToClose();
 
 }
 
-//This is a test
+
