@@ -3,12 +3,11 @@
 #include <time.h>
 #include <limits>
 
-
-//Starting health and attack definition
+//*Starting health and attack definition
 #define HEALTH 6
 #define ATTACK 3
 
-//Starting enemy health and attack definition
+//*Starting enemy health and attack definition
 #define ENHEALTH 10
 #define ENATTACK 3
 
@@ -16,15 +15,13 @@ using namespace std;
 
 int input = 0;
 
-//Player Health and Attack
+//*Player Health and Attack
 int Health = HEALTH;
 int Attack = ATTACK;
 
-//Enermy Health and Attack
+//*Enermy Health and Attack
 int EnHealth = ENHEALTH;
 int EnAttack = ENATTACK;
-
-
 
 void resetvars()
 {
@@ -50,7 +47,7 @@ int takeindata()
         input = 0;
     }
 
-    //Remember to edit this if statement when adding more player actions
+    //*Remember to edit this if statement when adding more player actions
     if (input != 1)
     {
         return 0;
@@ -86,21 +83,24 @@ void drawscreen()
     cout << "input 1 to attack and 0 to do defend  and 2 to exit" << endl;
 }
 
-int checkifwin(){
+int checkifwin()
+{
 
-    if(Health <= 0){
-        if(EnHealth <= 0){
+    if (Health <= 0)
+    {
+        if (EnHealth <= 0)
+        {
             //cout << "TIE!" << endl;
             return 1;
         }
         //cout << "You LOSE!" << endl;
         return 2;
     }
-    if(EnHealth <= 0){
+    if (EnHealth <= 0)
+    {
         //cout << "You WIN!" <<endl;
         return 3;
     }
-
 }
 
 int main()
@@ -108,14 +108,14 @@ int main()
 
     system("cls");
 
-    //Main Game loop
+    //*Main Game loop
     while (1)
     {
         srand(time(NULL));
 
         drawscreen();
 
-        //takes in user input and processes health
+        //*takes in user input and processes health
         switch (takeindata())
         {
         case 1:
@@ -131,7 +131,7 @@ int main()
             break;
         }
 
-        //takes in random enemy movement and processes health
+        //*takes in random enemy movement and processes health
         switch (enemy())
         {
 
@@ -151,7 +151,7 @@ int main()
 
         system("cls");
 
-        //Checks if Health is below 0
+        //*Checks if Health is below 0
         if (Health <= 0)
         {
 
@@ -175,7 +175,7 @@ int main()
         }
     }
 
-    //Checks the outcome of the game and prints outcome
+    //*Checks the outcome of the game and prints outcome
 
     switch (checkifwin())
     {
@@ -192,7 +192,7 @@ int main()
         break;
     }
 
-    //exit strategy
+    //*exit strategy
 
     string waitin = " ";
     cout << "type esc to end, anything else to restart program" << endl;

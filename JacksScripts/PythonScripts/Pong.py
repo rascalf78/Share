@@ -59,25 +59,25 @@ pen.write("Player A: 0  PlayerB: 0", align="center",
 # Function
 def paddle_a_up():
     y = paddle_a.ycor()
-    y += 20
+    y += 40
     paddle_a.sety(y)
 
 
 def paddle_a_down():
     y = paddle_a.ycor()
-    y -= 20
+    y -= 40
     paddle_a.sety(y)
 
 
 def paddle_b_up():
     y = paddle_b.ycor()
-    y += 20
+    y += 40
     paddle_b.sety(y)
 
 
 def paddle_b_down():
     y = paddle_b.ycor()
-    y -= 20
+    y -= 40
     paddle_b.sety(y)
 
 # Keyboard binding
@@ -98,6 +98,7 @@ while True:
 
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
+    paddle_b.sety(ball.ycor())
 
     # Border checking
 
