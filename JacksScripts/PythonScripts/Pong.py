@@ -52,30 +52,36 @@ pen.color("white")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Player A: 0  PlayerB: 0", align="center", font=("Courier", 24, "normal"))
+pen.write("Player A: 0  PlayerB: 0", align="center",
+          font=("Courier", 24, "normal"))
 
 
-# Function 
+# Function
 def paddle_a_up():
     y = paddle_a.ycor()
     y += 20
     paddle_a.sety(y)
+
 
 def paddle_a_down():
     y = paddle_a.ycor()
     y -= 20
     paddle_a.sety(y)
 
+
 def paddle_b_up():
     y = paddle_b.ycor()
     y += 20
     paddle_b.sety(y)
+
+
 def paddle_b_down():
     y = paddle_b.ycor()
     y -= 20
     paddle_b.sety(y)
 
 # Keyboard binding
+
 
 wn.listen()
 wn.onkeypress(paddle_a_up, "w")
@@ -107,21 +113,22 @@ while True:
         ball.dx *= -1
         score_a += 1
         pen.clear()
-        pen.write("Player A: {}  PlayerB: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
+        pen.write("Player A: {}  PlayerB: {}".format(score_a, score_b),
+                  align="center", font=("Courier", 24, "normal"))
     if ball.xcor() < -390:
         ball.goto(0, 0)
         ball.dx *= -1
         score_b += 1
         pen.clear()
-        pen.write("Player A: {}  PlayerB: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
-
+        pen.write("Player A: {}  PlayerB: {}".format(score_a, score_b),
+                  align="center", font=("Courier", 24, "normal"))
 
     # Paddle and ball collisions
 
-    if (ball.xcor() > 340 and ball.xcor() < 350)and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
+    if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
         ball.setx(340)
         ball.dx *= -1
-    
-    if (ball.xcor() < -340 and ball.xcor() > -350)and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
+
+    if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
         ball.setx(-340)
         ball.dx *= -1
