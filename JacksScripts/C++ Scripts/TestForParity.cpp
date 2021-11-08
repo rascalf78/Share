@@ -6,30 +6,26 @@
 
 using namespace std;
 
-
 int test = 1;
 
-
-void checkifodd(int num){
+void checkifodd(int num)
+{
 
     //Odd case
-    if((num % 2) == 1){
+    if ((num % 2) == 1)
+    {
         cout << "Number is odd" << endl;
-
-
     }
     //Even case
-    if((num % 2) == 0){
+    if ((num % 2) == 0)
+    {
         cout << "Number is even" << endl;
-
-
     }
-
 }
 
+int main()
+{
 
-int main(){
-   
     srand(time(NULL));
 
     int randomnum = rand();
@@ -39,7 +35,4 @@ int main(){
     checkifodd(randomnum);
 
     //waitToClose();
-
 }
-
-
