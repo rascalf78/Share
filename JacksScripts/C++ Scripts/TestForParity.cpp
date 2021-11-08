@@ -38,7 +38,7 @@ int main(){
 
     checkifodd(randomnum);
 
-    waitToClose();
+    //waitToClose();
 
 }
 
