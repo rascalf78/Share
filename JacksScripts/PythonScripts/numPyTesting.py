@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def mandelbrot(h, w, maxit=20, r=2):
     """Returns an image of the Mandelbrot fractal of size (h,w)."""
     x = np.linspace(-2.5, 1.5, 4*h+1)
@@ -11,7 +12,7 @@ def mandelbrot(h, w, maxit=20, r=2):
     divtime = maxit + np.zeros(z.shape, dtype=int)
 
     for i in range(maxit):
-        z = z**2 + C
+        z = z**3.5 + C
         diverge = abs(z) > r                    # who is diverging
         div_now = diverge & (divtime == maxit)  # who is diverging now
         divtime[div_now] = i                    # note when
