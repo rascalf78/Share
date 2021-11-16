@@ -12,7 +12,7 @@ def mandelbrot(h, w, maxit=20, r=2):
     divtime = maxit + np.zeros(z.shape, dtype=int)
 
     for i in range(maxit):
-        z = z**3.5 + C
+        z = z**2 + C
         diverge = abs(z) > r                    # who is diverging
         div_now = diverge & (divtime == maxit)  # who is diverging now
         divtime[div_now] = i                    # note when
