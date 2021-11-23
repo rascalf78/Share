@@ -98,7 +98,7 @@ while True:
 
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
-    paddle_b.sety(ball.ycor())
+    #paddle_b.sety(ball.ycor())
 
     # Border checking
 
